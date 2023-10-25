@@ -50,9 +50,9 @@ public void setLastName(string newLastName) {
     static void Main (String[] args) {
        void printOptions() {
          Console.WriteLine("please choose from one of the following options...");
-         Console.WriteLine("1.Deposit");
+         Console.WriteLine("1.Show Balance");
          Console.WriteLine("2.Withdraw");
-         Console.WriteLine("3.Show Balance");
+         Console.WriteLine("3.Deposit");
           Console.WriteLine("4.Exist");
 
        }
@@ -74,11 +74,11 @@ public void setLastName(string newLastName) {
          } 
          else {
             currentUser.setBalance(currentUser.getBalance() -withdraw);
-            Console.WriteLine("you are good to go! Thanks you: your current balance is " + currentUser.getBalance());
+            Console.WriteLine(" Thanks you Usage : your current balance is " + currentUser.getBalance());
          }
        }
        void balance(cardHolder currentUser) {
-           Console.WriteLine("current balance: " + currentUser.getBalance());
+           Console.WriteLine(" your current balance is: " + currentUser.getBalance());
        }
        List<cardHolder> cardHolders=new List<cardHolder>();
          cardHolders.Add(new cardHolder("123456",1234,"john","Girma", 1500));
@@ -125,15 +125,15 @@ public void setLastName(string newLastName) {
                      option =int.Parse(Console.ReadLine());
                   }
                   catch {}
-                  if(option ==1) {deposit(currentUser);}
+                  if(option ==1) {balance(currentUser);}
                   else if (option ==2) {Withdraw(currentUser);}
-                  else if(option ==3) {balance(currentUser);}
-                  else if (option ==4) {break;}
+                  else if(option ==3) {deposit(currentUser);}
+                  else if (option ==4) {break;}  
                   else {option =0;}
                   Console.WriteLine("Select your options...");
            } 
            while(option !=4);
-           Console.WriteLine("Thank you! Have a nice day:");
+           Console.WriteLine("Thank you: Have a nice day!");
         }
  }
 
